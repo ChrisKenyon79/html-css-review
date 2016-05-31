@@ -16,10 +16,15 @@ This is a review of your working knowledge of HTML and CSS. Note that this revie
 ## HTML
 
 1.) Create a valid, empty HTML page with the necessary tags.
+<!--
 
-```html
-<!-- Code goes here -->
-```
+<!DOCTYPE>
+<html>
+<head></head>
+<body></body>
+</html>
+
+-->
 
 2.) What are the differences between these tags?
 
@@ -34,8 +39,12 @@ This is a review of your working knowledge of HTML and CSS. Note that this revie
 ```
 Explain here.
 ```
+<!-- 
+Image (or the alternate of the image) puts those items on the page. 
+An empty div just puts a space between the items before and after
+(vertical space) that can hold other stuff. Img can only hold images. 
 
----
+-->
 
 ## CSS
 
@@ -58,24 +67,53 @@ Explain here.
 
 ```
 Explain here
+
+<!--
+The first div with style uses css directly in the html. It won't
+apply outside of the div. 
+
+The second style tag uses the link to allow css to be used as 
+it's own style sheet on this particular page. 
+-->
+
 ```
 
 2.) Below are some different CSS selectors. Use CSS comments to describe what each selector will do.
 
-```css
-/* comment like this */
+
 div {
   border-radius: 50%;
 }
+
+/* border radius of 50% will make the framed item a circle.
+as the selector (property type), it applies to all divs */
+
+
 
 .header p {
   font-size: 18px;
 }
 
+/* this will make all Ps inside header (children of header named 'p')
+have the font size of 18 pixels.   */
+
+
+
 .footer {
   position: absolute;
   bottom: 0;
 }
+
+/* absolute position makes the element (footer) positioned relative to 
+the original relative-positioned element previous to it. 
+We NEED the relative positioned element to exist first, then
+the absolute positioned element can use adjustments (top, right)
+to move. 
+Without the absolute pos element, the relative element simply 
+uses the top of the page as the reference. 
+*/
+
+
 
 .splash-image {
   background-image: url("../images/ocean.jpg");
@@ -83,9 +121,18 @@ div {
   width: 100%;
 }
 
+/*  Since the width is 100%, it will
+stretch (or squeeze, NOT cut)the image horizontally. 
+
+
+
 .ninja:hover {
   display: none;
   color: black;
 }
 ```
 
+/* hover will apply to all classes of "ninja". 
+Hover looks at the mouse pointer position (it is hovering over the elem?)
+and then enact the code - in this case, make it disappear (turn black)
+*/
